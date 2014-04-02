@@ -9,8 +9,8 @@
 | Updated: 17.04.2003                               |
 |--------------------------------------------------*/
 
-// Node object
-function Node(id, pid, name, url, title, target, icon, iconOpen, open) {
+// NodeDTree object
+function NodeDTree(id, pid, name, url, title, target, icon, iconOpen, open) {
 	this.id = id;
 	this.pid = pid;
 	this.name = name;
@@ -59,7 +59,7 @@ function dTree(objName) {
 	this.obj = objName;
 	this.aNodes = [];
 	this.aIndent = [];
-	this.root = new Node(-1);
+	this.root = new NodeDTree(-1);
 	this.selectedNode = null;
 	this.selectedFound = false;
 	this.completed = false;
@@ -67,7 +67,7 @@ function dTree(objName) {
 
 // Adds a new node to the node array
 dTree.prototype.add = function(id, pid, name, url, title, target, icon, iconOpen, open) {
-	this.aNodes[this.aNodes.length] = new Node(id, pid, name, url, title, target, icon, iconOpen, open);
+	this.aNodes[this.aNodes.length] = new NodeDTree(id, pid, name, url, title, target, icon, iconOpen, open);
 };
 
 // Open/close all nodes
